@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HC Capital Fund | Know your cost before you apply</title>
-<meta name="description" content="See your total cost, funding date and repay-by date before you apply.">
+<title>HC Capital Fund | Short-term funding, full cost shown first</title>
+<meta name="description" content="Short-term funding with the full cost shown first. Focused on families covering childcare and after-school costs, open to anyone with a short-term need.">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=Cinzel&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#111;--ink2:#46453F;--ink3:#6B695F;--line:#E4E0D3;--mist:#F5F4F0;--gold:#C9A02F;--gd:#8A6612;--gs:#F6EBC8;--d:'Bricolage Grotesque',system-ui,sans-serif;--b:'Figtree',system-ui,sans-serif}
@@ -52,7 +52,7 @@ summary{list-style:none;cursor:pointer;display:flex;justify-content:space-betwee
 details p{padding:0 0 20px;color:var(--ink2);max-width:66ch}
 .rq{background:var(--ink);color:#fff}.rg{display:grid;grid-template-columns:1fr 430px;gap:56px;align-items:center}.rq h2{font-size:clamp(28px,3.6vw,42px)}.rq .lead{color:#D8D5C6}
 .form{background:#fff;color:var(--ink);border-radius:18px;padding:26px}.form label.t{display:block;font-weight:600;font-size:14.5px;margin-bottom:5px}
-.form input[type=text],.form input[type=tel],.form input[type=email]{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:14px}
+.form input[type=text],.form input[type=tel],.form input[type=email],.form input[type=number]{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:14px}
 .form .btn{width:100%;padding:14px}.ck{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink2);margin:0 0 14px}.ck input{margin-top:3px;width:18px;height:18px;flex:none}
 .fine{font-size:12.5px;color:var(--ink3);margin-top:12px}.hp{position:absolute;left:-9999px}.stt{margin-top:12px;font-weight:600;font-size:14.5px}.err{color:#A32B1F}
 .sum{background:var(--mist);border-radius:10px;padding:10px 12px;font-size:13.5px;margin-bottom:14px;color:var(--ink2)}
@@ -62,46 +62,78 @@ dialog{border:0;border-radius:18px;padding:0;width:min(680px,calc(100vw - 32px))
 .mh{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:var(--ink);color:#fff}.mh h2{font-size:20px}.mh button{background:none;border:0;color:#fff;font-size:30px;cursor:pointer}
 .mb{padding:22px 24px 28px;overflow-y:auto;max-height:calc(82vh - 62px)}.mb h3{font-size:17px;margin:18px 0 6px}.mb h3:first-child{margin:0 0 6px}.mb p{font-size:15px;color:var(--ink2);margin-bottom:10px}
 .eg{background:var(--gs);border-radius:12px;padding:12px 14px;margin:10px 0}.eg p{color:var(--ink);margin:0 0 3px}.up{font-size:12.5px;color:var(--ink3)}
+.eb{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gd);background:var(--gs);padding:6px 12px;border-radius:99px;margin-bottom:18px}
+.wg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.wc{border:1px solid var(--line);border-radius:16px;padding:24px 22px;background:#fff}
+.wc svg{width:38px;height:38px;margin-bottom:14px;stroke:var(--gd);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.wc h3{font-size:19px;margin-bottom:6px}.wc p{font-size:15px;color:var(--ink2)}
+.wc.o{background:var(--ink);border-color:var(--ink)}.wc.o h3{color:#fff}.wc.o p{color:#D8D5C6}.wc.o svg{stroke:var(--gold)}
+.wn{margin-top:22px;font-size:15px;color:var(--ink2);max-width:70ch}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.lf{margin-top:14px;padding:12px 14px;border-radius:10px;font-size:13.5px;background:#FBEFEA;color:#7A2E1E;border:1px solid #F0D2C7}
+.lf b{font-weight:700}
+.rb{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}.rb ul{list-style:none;display:grid;gap:12px}.rb li{padding-left:28px;position:relative;color:var(--ink2)}.rb li:before{content:'';position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+@media(max-width:980px){.wg{grid-template-columns:1fr 1fr}.tg,.rb{grid-template-columns:1fr}}
+@media(max-width:560px){.wg{grid-template-columns:1fr}}
 @media(max-width:980px){.hg,.rg{grid-template-columns:1fr;gap:36px}.steps{grid-template-columns:1fr 1fr;row-gap:42px}nav a:not(.btn){display:none}.fi{grid-template-columns:1fr}.fa{border:0;border-top:1px solid #2C2B27;padding:22px 0}.fa:first-child{border-top:0}}
 @media(max-width:560px){.bn{font-size:14px;letter-spacing:.08em}.steps{grid-template-columns:1fr}section{padding:56px 0}th,td{padding:12px;font-size:14.5px}}
 </style></head><body>
 <header><div class="wrap hin">
 <a class="brand" href="#top" aria-label="HC Capital Fund home"><svg viewBox="0 0 48 48" role="img" aria-label="HC seal"><circle cx="24" cy="24" r="22" fill="#111" stroke="#C9A02F" stroke-width="2.5"/><circle cx="24" cy="24" r="17" fill="none" stroke="#C9A02F" stroke-width="1"/><text x="24" y="30" text-anchor="middle" font-family="Cinzel,serif" font-size="17" fill="#C9A02F">HC</text></svg><span class="bn">HC CAPITAL FUND</span></a>
-<nav aria-label="Main"><a href="#how">How it works</a><a href="#schedule">Dates</a><a href="#faq">Questions</a><a class="btn" href="#request">Apply</a></nav></div></header>
+<nav aria-label="Main"><a href="#who">Who it's for</a><a href="#how">How it works</a><a href="#costs">Costs</a><a href="#schedule">Dates</a><a href="#faq">Questions</a><a class="btn" href="#request">Apply</a></nav></div></header>
 <main id="top">
 <div class="hero"><div class="wrap hg"><div>
-<h1>Know your full cost before you apply.</h1>
-<p class="lead">See your total cost, your annual percentage rate (APR) and your repay-by date before you apply. Short-term loans cost more than most credit, so use the numbers to decide.</p>
+<span class="eb">Now serving families first</span>
+<h1>Short-term funding. Full cost shown first.</h1>
+<p class="lead">Know your total cost and repay-by date before you apply. We are starting with families who cover childcare and after-school costs, and anyone with a short-term need can check availability. Short-term loans cost more than most credit, so use the numbers to decide.</p>
 <div class="cta"><a class="btn" href="#request">Check availability</a><a class="btn g" href="#schedule">See dates</a></div>
 <p class="note">HC Capital funds loans through a third-party platform. You apply and sign your loan agreement there. The platform decides approval and your approved amount, and HC does not approve loans. Funding is not guaranteed.</p></div>
 <div class="calc" aria-labelledby="ct"><div class="ch"><h2 id="ct">Plan your loan</h2><p>Costs and dates update as you change your choices.</p></div><div class="cb">
 <div class="f"><div class="fr"><label for="amt">Loan amount</label><span class="fv" id="amt-o">$100</span></div><input type="range" id="amt" min="20" max="575" step="5" value="100"><div class="ends"><span>$20</span><span>$575</span></div><div class="hint">Enter the amount you expect to be approved for.</div></div>
 <div class="f"><div class="fr"><label for="ret">Return to lender</label><span class="fv" id="ret-o">10%</span></div><input type="range" id="ret" min="0" max="15" step="1" value="10"><div class="ends"><span>0%</span><span>15%</span></div><div class="hint">The return is part of the cost of your loan. A higher return costs you more.</div></div>
-<div class="f"><div class="fr"><span class="l" id="tl">Time to repay</span></div><div class="seg" role="radiogroup" aria-labelledby="tl"><label><input type="radio" name="term" value="14" checked><span>14 days</span></label><label><input type="radio" name="term" value="28"><span>28 days</span></label></div></div>
-<div class="res" aria-live="polite"><div><small>Funding date (if funded)</small><b id="r-f">—</b></div><div><small>Repay by</small><b id="r-d">—</b></div><div><small>Cost of the loan</small><b id="r-c">—</b></div><div class="k"><small>Total to repay</small><b id="r-t">—</b></div><div class="k" style="grid-column:1/-1"><small>Annual percentage rate (APR)</small><b id="r-a">—</b></div></div>
+<div class="f"><div class="fr"><span class="l">Time to repay</span><span class="fv">14 days</span></div></div>
+<div class="res" aria-live="polite"><div><small>Funding date (if funded)</small><b id="r-f">—</b></div><div><small>Repay by</small><b id="r-d">—</b></div><div><small>Cost of the loan</small><b id="r-c">—</b></div><div class="k"><small>Total to repay</small><b id="r-t">—</b></div></div>
+<div class="lf"><b>Late fees will apply</b> if you repay after your due date. Late fees are set and charged by the third-party platform.</div>
 <div class="av ld" id="av" role="status">Checking availability…</div>
 <div class="cf"><button type="button" class="ll" data-doc="returns">How these numbers work</button><a class="btn" href="#request" id="cta2">Continue</a></div>
 </div></div></div></div>
-<div class="facts"><div class="wrap fi"><div class="fa"><b>Total cost first</b><span>Cost of the loan and APR are shown before you apply.</span></div><div class="fa"><b>Clear dates</b><span>Funding and repay-by dates are shown for each choice.</span></div><div class="fa"><b>Waitlist when full</b><span>If we cannot fund your amount now, you can join the waitlist.</span></div></div></div>
-<section id="how"><div class="wrap"><div class="sh"><h2>How it works</h2><p>Four steps from request to repayment.</p></div><div class="steps">
+<div class="facts"><div class="wrap fi"><div class="fa"><b>Total cost first</b><span>Cost of the loan is shown before you apply.</span></div><div class="fa"><b>Clear dates</b><span>Funding and repay-by dates are shown for each choice.</span></div><div class="fa"><b>Waitlist when full</b><span>If we cannot fund your amount now, you can join the waitlist.</span></div></div></div>
+<section id="who"><div class="wrap"><div class="sh"><h2>Built first for the costs families plan around</h2><p>Childcare and after-school care are paid on a schedule. When a payment is due before payday, short-term funding can help you cover the gap.</p></div>
+<div class="wg">
+<div class="wc"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 22 24 8l18 14"/><path d="M10 20v20h28V20"/><path d="M20 40V28h8v12"/></svg><h3>Daycare and childcare</h3><p>Weekly or monthly tuition, registration fees and deposits that come due before your next paycheck.</p></div>
+<div class="wc"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h14a4 4 0 0 1 4 4v24a3 3 0 0 0-3-3H8z"/><path d="M40 12H26"/><path d="M40 12v25H29"/></svg><h3>After-school programs</h3><p>Program fees, sports, tutoring and enrichment that keep the school week covered.</p></div>
+<div class="wc"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="8"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11 11l4 4M33 33l4 4M37 11l-4 4M15 33l-4 4"/></svg><h3>Summer and camps</h3><p>Camp deposits and seasonal care costs that arrive all at once.</p></div>
+<div class="wc o"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40S8 30 8 19a8 8 0 0 1 16-2 8 8 0 0 1 16 2c0 11-16 21-16 21z"/></svg><h3>Anyone with a short-term need</h3><p>Not a parent? You are welcome to check availability. We are starting with families and growing from there.</p></div>
+</div>
+<p class="wn">Use funds the way that fits your life, and borrow only what you can repay by your due date.</p></div></section>
+<section id="how" class="alt"><div class="wrap"><div class="sh"><h2>How it works</h2><p>Four steps from request to repayment.</p></div><div class="steps">
 <div class="st"><h3>Check availability</h3><p>Choose your amount and see if we can fund it now.</p></div>
 <div class="st"><h3>Send your details</h3><p>Share your name, phone number and email.</p></div>
 <div class="st"><h3>Apply and get approved</h3><p>We send instructions. A third-party platform reviews you and sets your approved amount.</p></div>
 <div class="st"><h3>Get funded and repay</h3><p>If funded, you repay by your due date.</p></div></div></div></section>
+<section id="costs"><div class="wrap"><div class="sh"><h2>What it costs, including late fees</h2><p>No surprises. Here is every cost to know before you apply.</p></div>
+<div class="tg">
+<div class="wc"><h3>The return you offer</h3><p>A percentage of your loan paid to the lender, up to 15%. The calculator shows this cost before you apply.</p></div>
+<div class="wc"><h3>Platform fees</h3><p>The third-party platform may charge its own fees. They are shown in the platform's documents.</p></div>
+<div class="wc"><h3>Late fees will apply</h3><p>If you repay after your due date, late fees will apply. They are set and charged by the third-party platform, and they are shown in your loan documents. <button type="button" class="ll" data-doc="late">Read Repayment &amp; Late Payment</button></p></div>
+</div></div></section>
 <section id="schedule" class="alt"><div class="wrap"><div class="sh"><h2>Estimated funding dates</h2><p>Dates apply only when funds are available. Your repay-by date counts from your funding date.</p></div>
-<div class="tw"><table><thead><tr><th>Funding date</th><th>Repay by (14 days)</th><th>Repay by (28 days)</th></tr></thead><tbody id="sb"></tbody></table></div><p class="sn">Dates are estimates. Your loan documents control the final dates.</p></div></section>
-<section id="faq"><div class="wrap"><div class="sh"><h2>Questions</h2></div>
-<details><summary>What does it cost?</summary><p>The cost is the return you offer plus any fees charged by the platform. The calculator shows the cost of the loan and the APR for your choices. <button type="button" class="ll" data-doc="returns">Read the Return &amp; Fee Disclosure</button>.</p></details>
+<div class="tw"><table><thead><tr><th>Funding date</th><th>Repay by (14 days)</th></tr></thead><tbody id="sb"></tbody></table></div><p class="sn">Dates are estimates. Your loan documents control the final dates.</p></div></section>
+<section id="care"><div class="wrap rb"><div><h2 style="font-size:clamp(28px,3.4vw,40px)">Borrow with a plan</h2><p class="lead">Short-term funding works best when you know exactly how and when you will repay.</p></div>
+<ul><li>Choose an amount you can repay by your due date, including the return.</li><li>Check the repay-by date and total cost before you apply.</li><li>If you may be late, contact us before the due date. Late fees will apply after it.</li><li>Approval and funding are decided by the third-party platform and are never guaranteed.</li></ul></div></section>
+<section id="faq" class="alt"><div class="wrap"><div class="sh"><h2>Questions</h2></div>
+<details><summary>What does it cost?</summary><p>The cost is the return you offer plus any fees charged by the platform. The calculator shows the cost of the loan for your choices. <button type="button" class="ll" data-doc="returns">Read the Return &amp; Fee Disclosure</button>.</p></details>
 <details><summary>How much can I borrow?</summary><p>The platform sets your approved amount based on your profile, and new borrowers may start smaller. We fund up to that amount only when funds are available.</p></details>
 <details><summary>What if you cannot fund my amount?</summary><p>You can join the waitlist. We contact you when funds become available. Joining does not guarantee funding.</p></details>
-<details><summary>What if I cannot repay on time?</summary><p>Contact us before your due date. Late payments may carry fees and can affect your standing. <button type="button" class="ll" data-doc="late">Read Repayment &amp; Late Payment</button>.</p></details>
+<details><summary>Can I use this for daycare or after-school costs?</summary><p>Many families use short-term funding for childcare tuition, registration fees and after-school program costs. Borrow only what you can repay by your due date.</p></details>
+<details><summary>Is this only for parents?</summary><p>No. We are focused on families right now, but anyone with a short-term need can check availability.</p></details>
+<details><summary>What if I cannot repay on time?</summary><p>Contact us before your due date. Late fees will apply after it, and late payments can affect your standing. <button type="button" class="ll" data-doc="late">Read Repayment &amp; Late Payment</button>.</p></details>
 <details><summary>Is approval guaranteed?</summary><p>No. The platform decides approval, and funding depends on available funds.</p></details>
 <details><summary>What do I need to start?</summary><p>Only your name, phone number and email. We send instructions for the next steps.</p></details></div></section>
 <section id="request" class="rq"><div class="wrap rg"><div><h2 id="rh">Check availability</h2><p class="lead" id="rl">Share your contact details. We reply with the next steps, or add you to the waitlist if we cannot fund your amount now.</p></div>
 <div class="form" id="fb"><form id="req" action="https://formspree.io/f/moejwjay" method="POST">
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
 <div class="sum" id="sum"></div>
-<input type="hidden" name="type" id="h-type"><input type="hidden" name="amount" id="h-amt"><input type="hidden" name="return_pct" id="h-ret"><input type="hidden" name="term_days" id="h-term">
+<input type="hidden" name="type" id="h-type"><input type="hidden" name="return_pct" id="h-ret"><input type="hidden" name="term_days" id="h-term">
+<label class="t" for="h-amt">Amount you want to borrow ($)</label><input type="number" id="h-amt" name="amount" min="20" max="575" step="5" inputmode="numeric" required>
 <label class="t" for="fn">Full name</label><input type="text" id="fn" name="name" autocomplete="name" required>
 <label class="t" for="fp">Phone number</label><input type="tel" id="fp" name="phone" autocomplete="tel" inputmode="tel" required>
 <label class="t" for="fe">Email</label><input type="email" id="fe" name="email" autocomplete="email" required>
@@ -129,25 +161,26 @@ async function loadAv(){try{const r=await fetch(AVAIL_URL);if(!r.ok)throw 0;cons
  const max=+(f.maxLoan&&(f.maxLoan.integerValue||f.maxLoan.doubleValue))||0,up=+(f.updatedAt&&(f.updatedAt.integerValue||f.updatedAt.doubleValue))||0,st=f.status&&f.status.stringValue;
  AV=(st==='open'&&max>0&&Date.now()-up<STALE_H*36e5)?{state:'open',max}:{state:'full',max:0}}catch(e){AV={state:'full',max:0}}update()}
 const can=s=>AV.state==='open'&&s.amt<=AV.max;
-function S(){const amt=+$('amt').value,pct=+$('ret').value,days=+document.querySelector('input[name=term]:checked').value,ret=amt*pct/100;return{amt,pct,days,ret,total:amt+ret,apr:amt?ret/amt*(365/days)*100:0}}
+function S(){const amt=+$('amt').value,pct=+$('ret').value,days=CYCLE,ret=amt*pct/100;return{amt,pct,days,ret,total:amt+ret}}
 function pc(e){e.style.setProperty('--p',(e.value-e.min)/(e.max-e.min)*100+'%')}
 function update(){const s=S();pc($('amt'));pc($('ret'));$('amt-o').textContent='$'+s.amt;$('ret-o').textContent=s.pct+'%';
- const f=nextF(0);$('r-f').textContent=fd(f);$('r-d').textContent=fd(add(f,s.days));$('r-c').textContent=$$(s.ret);$('r-t').textContent=$$(s.total);$('r-a').textContent=s.apr.toFixed(0)+'%';
+ const f=nextF(0);$('r-f').textContent=fd(f);$('r-d').textContent=fd(add(f,s.days));$('r-c').textContent=$$(s.ret);$('r-t').textContent=$$(s.total);
  const av=$('av'),ok=can(s),ld=AV.state==='loading';
  av.className='av '+(ld?'ld':ok?'ok':'no');
  av.textContent=ld?'Checking availability…':ok?'This amount is available to fund now. Approval and funding are not guaranteed.':'We cannot fund this amount right now. You can join the waitlist and we will contact you when funds are available.';
  $('cta2').textContent=ok||ld?'Continue':'Join the waitlist';
  const w=!ok&&!ld;$('rh').textContent=w?'Join the waitlist':'Check availability';$('fbtn').textContent=w?'Join the waitlist':'Send request';
  $('h-type').value=w?'waitlist':'request';$('h-amt').value=s.amt;$('h-ret').value=s.pct;$('h-term').value=s.days;
- $('sum').textContent='Your choices: $'+s.amt+' for '+s.days+' days, '+s.pct+'% return. Cost of the loan '+$$(s.ret)+', APR about '+s.apr.toFixed(0)+'%.'}
-['amt','ret'].forEach(i=>$(i).addEventListener('input',update));document.querySelectorAll('input[name=term]').forEach(r=>r.addEventListener('change',update));
-$('sb').innerHTML=[0,1,2,3].map(i=>{const f=nextF(i);return`<tr${i?'':' class="n"'}><td>${fd(f)}</td><td>${fd(add(f,14))}</td><td>${fd(add(f,28))}</td></tr>`}).join('');
+ $('sum').textContent='Your choices: $'+s.amt+' for '+s.days+' days, '+s.pct+'% return. Cost of the loan '+$$(s.ret)+'. Late fees will apply if repaid after the due date.'}
+['amt','ret'].forEach(i=>$(i).addEventListener('input',update));
+$('h-amt').addEventListener('change',e=>{let v=Math.round((+e.target.value||0)/5)*5;v=Math.min(575,Math.max(20,v));$('amt').value=v;update()});
+$('sb').innerHTML=[0,1,2,3].map(i=>{const f=nextF(i);return`<tr${i?'':' class="n"'}><td>${fd(f)}</td><td>${fd(add(f,14))}</td></tr>`}).join('');
 /* Legal text: draft for counsel to review */
 const UPD='Last updated: November 2026. Draft pending legal review.';
 const D={
 terms:['Terms of Use',()=>`<h3>Using this site</h3><p>This site shares information about loans funded by HC Capital and lets you request contact. Using it means you accept these terms.</p><h3>No offer or commitment</h3><p>Nothing here is an offer, approval or promise to lend. A third-party platform decides approval and your approved amount. HC Capital funds only when funds are available.</p><h3>Estimates</h3><p>The calculator and dates are estimates. Your loan documents control.</p><h3>Your information</h3><p>You confirm the details you submit are accurate and yours.</p><p class="up">${UPD}</p>`],
-returns:['Return & Fee Disclosure',()=>{const s=S();return`<h3>The return is a cost of the loan</h3><p>The return is an amount paid to the lender on top of the amount you receive, up to ${MAXR}% of the loan. It is part of the finance charge, together with any fees charged by the platform.</p><h3>Your current choices</h3><div class="eg"><p><b>Loan amount:</b> $${s.amt}</p><p><b>Return (${s.pct}%):</b> ${$$(s.ret)}</p><p><b>Time to repay:</b> ${s.days} days</p><p><b>Total to repay:</b> ${$$(s.total)}</p><p><b>Annual percentage rate (APR):</b> about ${s.apr.toFixed(0)}%</p></div><p>APR is the cost of the loan stated as a yearly rate. Short-term loans have high APRs and are meant for temporary needs only. Platform fees, if any, are extra and shown in the platform's documents.</p><h3>No guarantee</h3><p>Offering a return does not guarantee approval or funding.</p><p class="up">${UPD}</p>`}],
-late:['Repayment & Late Payment',()=>`<h3>When to repay</h3><p>Repay on or before the due date in your loan documents.</p><h3>If you may be late</h3><p>Contact us before the due date.</p><h3>Late payments</h3><p>Late payments may carry fees, may lower your standing on the platform and may reduce future amounts. Unpaid accounts may be sent to collections as described in your loan documents.</p><p class="up">${UPD}</p>`],
+returns:['Return & Fee Disclosure',()=>{const s=S();return`<h3>The return is a cost of the loan</h3><p>The return is an amount paid to the lender on top of the amount you receive, up to ${MAXR}% of the loan. It is part of the finance charge, together with any fees charged by the platform.</p><h3>Your current choices</h3><div class="eg"><p><b>Loan amount:</b> $${s.amt}</p><p><b>Return (${s.pct}%):</b> ${$$(s.ret)}</p><p><b>Time to repay:</b> ${s.days} days</p><p><b>Total to repay:</b> ${$$(s.total)}</p></div><p>Short-term loans are costly and meant for temporary needs only. Platform fees, if any, are extra and shown in the platform's documents. Late fees will apply if you repay after your due date.</p><h3>No guarantee</h3><p>Offering a return does not guarantee approval or funding.</p><p class="up">${UPD}</p>`}],
+late:['Repayment & Late Payment',()=>`<h3>When to repay</h3><p>Repay on or before the due date in your loan documents.</p><h3>If you may be late</h3><p>Contact us before the due date.</p><h3>Late payments</h3><p>Late fees will apply if you repay after your due date. They are set and charged by the third-party platform and are shown in your loan documents. Late payments may also lower your standing on the platform and reduce future amounts. Unpaid accounts may be sent to collections as described in your loan documents.</p><p class="up">${UPD}</p>`],
 eligibility:['Eligibility',()=>`<h3>Who can apply</h3><p>The platform sets eligibility. It typically includes being of legal age, having a bank account and completing the platform's review.</p><h3>Funding</h3><p>Meeting requirements does not guarantee funding. We fund only when funds are available, and if we cannot fund your amount you can join the waitlist.</p><p class="up">${UPD}</p>`],
 privacy:['Privacy Policy',()=>`<h3>What we collect</h3><p>Your name, phone number and email, and the amount and terms you chose.</p><h3>How we use it</h3><p>To contact you about your request or waitlist spot and provide support. We do not sell your information. We share it only with providers that help us run this site and where the law requires.</p><h3>Your choices</h3><p>Email contact@hccapitalfund.com to update or delete your information. Reply STOP to opt out of texts.</p><p class="up">${UPD}</p>`],
 contact:['Consent to Contact',()=>`<h3>Phone and email</h3><p>By sending a request you agree that HC Capital may contact you by phone and email about it.</p><h3>Text messages</h3><p>Text messages are sent only if you check the separate text consent box. Consent is not a condition of sending a request. Message and data rates may apply. Reply STOP to opt out.</p><p class="up">${UPD}</p>`],
